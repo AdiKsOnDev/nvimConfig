@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "pylsp", "tailwindcss", "html", "cssls", "clangd", "jdtls" }
+local servers = { "pyright", "biome", "html", "cssls", "ts_ls", "clangd", "jdtls", "rust_analyzer" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

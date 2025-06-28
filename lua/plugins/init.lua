@@ -11,7 +11,21 @@ local default_plugins = {
       require("base46").load_all_highlights()
     end,
   },
-
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_compiler_method = 'latexmk'
+      vim.g.vimtex_compiler_latexmk = {
+        out_dir = "build",
+        aux_dir = "build",
+        options = {
+          "-synctex=1",
+        }
+      }
+    end,
+  },
   {
     "NvChad/ui",
     branch = "v2.0",
